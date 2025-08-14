@@ -28,6 +28,20 @@ const tokenNames = {
     'SUIUSDT': 'Sui'
 };
 
+// Token logos mapping
+const tokenLogos = {
+    'BTCUSDT': 'http://assets.coingecko.com/coins/images/1/standard/bitcoin.png',
+    'ETHUSDT': 'https://assets.coingecko.com/coins/images/279/standard/ethereum.png',
+    'BNBUSDT': 'https://assets.coingecko.com/coins/images/825/large/bnb-icon2_2x.png',
+    'LINKUSDT': 'https://assets.coingecko.com/coins/images/877/large/chainlink-new-logo.png',
+    'SOLUSDT': 'https://assets.coingecko.com/coins/images/4128/large/solana.png',
+    'XRPUSDT': 'https://assets.coingecko.com/coins/images/44/large/xrp-symbol-white-128.png',
+    'ARBUSDT': 'http://assets.coingecko.com/coins/images/16547/standard/arb.jpg',
+    'DOGEUSDT': 'https://assets.coingecko.com/coins/images/5/large/dogecoin.png',
+    'APTUSDT': 'https://assets.coingecko.com/coins/images/26455/large/aptos_round.png',
+    'SUIUSDT': 'https://assets.coingecko.com/coins/images/26375/large/sui_asset.jpeg'
+};
+
 // Store token data
 let tokenData = {};
 
@@ -89,8 +103,13 @@ function updateTokenTable() {
                 <tr>
                     <td class="rank">${index + 1}</td>
                     <td>
-                        <div class="token-symbol">${symbolName}</div>
-                        <div class="token-name">${tokenNames[symbol]}</div>
+                        <div class="token-info">
+                            <img src="${tokenLogos[symbol]}" alt="${tokenNames[symbol]}" class="token-logo" onerror="this.style.display='none'">
+                            <div class="token-details">
+                                <div class="token-symbol">${symbolName}</div>
+                                <div class="token-name">${tokenNames[symbol]}</div>
+                            </div>
+                        </div>
                     </td>
                     <td class="price">--</td>
                     <td class="price-change">--</td>
@@ -107,8 +126,13 @@ function updateTokenTable() {
             <tr>
                 <td class="rank">${index + 1}</td>
                 <td>
-                    <div class="token-symbol">${symbolName}</div>
-                    <div class="token-name">${tokenNames[symbol]}</div>
+                    <div class="token-info">
+                        <img src="${tokenLogos[symbol]}" alt="${tokenNames[symbol]}" class="token-logo" onerror="this.style.display='none'">
+                        <div class="token-details">
+                            <div class="token-symbol">${symbolName}</div>
+                            <div class="token-name">${tokenNames[symbol]}</div>
+                        </div>
+                    </div>
                 </td>
                 <td class="price">${formatPrice(data.lastPrice)}</td>
                 <td class="price-change ${priceChangeClass}">${priceChangeSign}${priceChange.toFixed(2)}%</td>

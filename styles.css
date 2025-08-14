@@ -74,11 +74,31 @@ h2 {
     background: linear-gradient(90deg, #627eea, #4c5fd8);
 }
 
+.price-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.price-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.price-logo:hover {
+    transform: scale(1.1);
+}
+
 .price-label {
     font-size: 1.1em;
     font-weight: 600;
     color: #666;
-    margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -234,6 +254,30 @@ h2 {
     border-bottom: none;
 }
 
+.token-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.token-logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.token-logo:hover {
+    transform: scale(1.1);
+}
+
+.token-details {
+    display: flex;
+    flex-direction: column;
+}
+
 .token-symbol {
     font-weight: 700;
     color: #2c3e50;
@@ -358,6 +402,16 @@ h2 {
         padding: 20px;
     }
 
+    .price-logo {
+        width: 32px;
+        height: 32px;
+    }
+
+    .price-header {
+        gap: 8px;
+        margin-bottom: 12px;
+    }
+
     .price-value {
         font-size: 2em;
     }
@@ -387,6 +441,15 @@ h2 {
         padding: 12px 8px;
     }
 
+    .token-logo {
+        width: 28px;
+        height: 28px;
+    }
+
+    .token-info {
+        gap: 8px;
+    }
+
     .price-value {
         font-size: 1.8em;
     }
@@ -401,6 +464,16 @@ h2 {
         font-size: 1.6em;
     }
 
+    .price-logo {
+        width: 28px;
+        height: 28px;
+    }
+
+    .price-header {
+        gap: 6px;
+        margin-bottom: 10px;
+    }
+
     .token-table {
         font-size: 0.8em;
     }
@@ -408,6 +481,15 @@ h2 {
     .token-table th,
     .token-table td {
         padding: 10px 6px;
+    }
+
+    .token-logo {
+        width: 24px;
+        height: 24px;
+    }
+
+    .token-info {
+        gap: 6px;
     }
 }
 
