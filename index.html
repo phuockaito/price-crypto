@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Content Security Policy - Cho phép tất cả kết nối cần thiết -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src * 'unsafe-inline' 'unsafe-eval'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline';">
+    <title>BTC and ETH Realtime (Binance)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>🚀 Crypto Dashboard - Real-time Prices</h2>
+
+        <div class="price-info">
+            <div class="price-card btc-price">
+                <div class="price-label">Bitcoin (BTC)</div>
+                <div class="price-value" id="btcPrice">--</div>
+            </div>
+            <div class="price-card eth-price">
+                <div class="price-label">Ethereum (ETH)</div>
+                <div class="price-value" id="ethPrice">--</div>
+            </div>
+        </div>
+
+        <div class="status" id="status">Đang tải dữ liệu...</div>
+
+        <!-- Time Interval Selector -->
+        <div class="interval-selector">
+            <label for="timeInterval">🕐 Update Interval:</label>
+            <select id="timeInterval">
+                <option value="1000">1 giây</option>
+                <option value="5000">5 giây</option>
+                <option value="10000">10 giây</option>
+                <option value="30000">30 giây</option>
+                <option value="60000">1 phút</option>
+                <option value="300000">5 phút</option>
+                <option value="900000">15 phút</option>
+                <option value="3600000">1 giờ</option>
+            </select>
+        </div>
+
+        <!-- Top 10 Tokens Table -->
+        <div class="table-container">
+            <div class="table-title">🏆 Top 10 Tokens by Volume <span id="tableInterval">(1 giây)</span></div>
+            <table class="token-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Token</th>
+                        <th>Price (USDT)</th>
+                        <th>Change</th>
+                        <th>Volume</th>
+                    </tr>
+                </thead>
+                <tbody id="tokenTableBody">
+                    <tr>
+                        <td colspan="5" style="text-align: center; padding: 20px;">Loading data...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
